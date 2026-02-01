@@ -18,4 +18,4 @@ package Bai1;
             System.out.println("Điểm trung bình: " + average);
         }
     }
-
+//

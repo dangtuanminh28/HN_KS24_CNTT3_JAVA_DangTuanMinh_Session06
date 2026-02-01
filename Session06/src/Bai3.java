@@ -19,7 +19,7 @@ class Product {
     public String getProductName() {
         return productName;
     }
-    public void setProductName(String tenSP) {
+    public void setProductName(String productName) {
         this.productName = productName;
     }
 

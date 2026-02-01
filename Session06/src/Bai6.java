@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 class User {
     private int id;
     private String username;
@@ -16,6 +18,7 @@ class User {
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
@@ -47,10 +50,12 @@ class User {
 
     // Kiểm tra ký tự @
     public void setEmail(String email) {
-        if (email != null && email.contains("@")) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[a-z]{2,6}$";
+
+        if (email != null && Pattern.matches(emailRegex, email)) {
             this.email = email;
         } else {
-            System.out.println("Email '" + email + "' không hợp lệ (thiếu @)!");
+            System.out.println("Lỗi: Email '" + email + "' không đúng định dạng!");
             this.email = "unknown@example.com";
         }
     }
